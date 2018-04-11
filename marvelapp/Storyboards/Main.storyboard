@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AAK-xa-VcJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Personagens-->
+        <scene sceneID="kpg-db-lJw">
+            <objects>
+                <tableViewController id="BoE-Bb-8bg" customClass="CharactersTableViewController" customModule="ilegra_marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h1k-04-3qq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BG_COLOR"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" name="BORDER_IMAGE"/>
+                        <color key="sectionIndexBackgroundColor" name="BORDER_IMAGE"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Buscar personagem" id="6ba-qT-mEr">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" name="BORDER_IMAGE"/>
+                            <color key="barTintColor" name="BG_COLOR"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" textContentType="name"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="characterCell" id="G95-df-lTK" customClass="CharacterTableViewCell" customModule="ilegra_marvel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="84" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G95-df-lTK" id="dsn-VD-1tP">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="BG_COLOR"/>
+                                <connections>
+                                    <segue destination="IMO-Sk-xWQ" kind="show" identifier="characterSegue" id="wqK-0f-b8e"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BoE-Bb-8bg" id="38N-yD-4Q8"/>
+                            <outlet property="delegate" destination="BoE-Bb-8bg" id="L2F-xj-I5m"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Personagens" id="ncm-SL-K4d">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="6Iw-c0-nYy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="6ba-qT-mEr" id="p88-w6-xrd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSV-mV-Yh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="163"/>
+        </scene>
+        <!--Detalhe-->
+        <scene sceneID="NPT-QV-PSm">
+            <objects>
+                <viewController title="Detalhe" id="IMO-Sk-xWQ" customClass="CharacterViewController" customModule="ilegra_marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OaN-OU-G71">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descrição" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-Oi-Zjc">
+                                <rect key="frame" x="16" y="250" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Qe-XU-8kI">
+                                <rect key="frame" x="20" y="136" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="K14-e3-uHp"/>
+                                    <constraint firstAttribute="width" constant="100" id="s88-Ah-Qvc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khb-6T-Q7g">
+                                <rect key="frame" x="30" y="567" width="315" height="50"/>
+                                <color key="backgroundColor" name="BASE_COLOR"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="V6C-US-QQ1"/>
+                                </constraints>
+                                <state key="normal" title="Acessar página do personagem">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AIz-lg-1np" kind="show" identifier="webPageCharacterSegue" id="WbB-69-wKA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-YH-bHZ">
+                                <rect key="frame" x="136" y="170.5" width="239" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="BG_COLOR"/>
+                        <constraints>
+                            <constraint firstItem="6Qe-XU-8kI" firstAttribute="leading" secondItem="Hmd-Ce-whu" secondAttribute="leading" constant="20" id="8uM-BG-eaH"/>
+                            <constraint firstItem="Hmd-Ce-whu" firstAttribute="bottom" secondItem="khb-6T-Q7g" secondAttribute="bottom" constant="50" id="HuV-Cr-D0G"/>
+                            <constraint firstItem="Hmd-Ce-whu" firstAttribute="trailing" secondItem="khb-6T-Q7g" secondAttribute="trailing" constant="30" id="JrJ-ic-yaX"/>
+                            <constraint firstItem="khb-6T-Q7g" firstAttribute="leading" secondItem="Hmd-Ce-whu" secondAttribute="leading" constant="30" id="KVh-Et-94s"/>
+                            <constraint firstItem="LbG-YH-bHZ" firstAttribute="leading" secondItem="6Qe-XU-8kI" secondAttribute="trailing" constant="16" id="X8O-y0-yaB"/>
+                            <constraint firstItem="Hmd-Ce-whu" firstAttribute="bottom" secondItem="khb-6T-Q7g" secondAttribute="bottom" constant="50" id="id3-ck-oLP"/>
+                            <constraint firstItem="LbG-YH-bHZ" firstAttribute="trailing" secondItem="Hmd-Ce-whu" secondAttribute="trailing" id="l8m-Hx-35q"/>
+                            <constraint firstItem="LbG-YH-bHZ" firstAttribute="centerY" secondItem="6Qe-XU-8kI" secondAttribute="centerY" id="pgh-7W-Klh"/>
+                            <constraint firstItem="6Qe-XU-8kI" firstAttribute="top" secondItem="Hmd-Ce-whu" secondAttribute="top" constant="20" id="rfJ-eE-kBl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hmd-Ce-whu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detalhe personagem" id="ItN-ac-2cU">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="HxA-q2-JXL"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnWebPage" destination="khb-6T-Q7g" id="dQL-VS-L8F"/>
+                        <outlet property="descCharacter" destination="pyk-Oi-Zjc" id="ZoH-zL-2GS"/>
+                        <outlet property="imgCharacter" destination="6Qe-XU-8kI" id="CwS-Pp-tv6"/>
+                        <outlet property="nameCharacter" destination="LbG-YH-bHZ" id="Jur-8a-tD4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGz-hc-qi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661.5999999999999" y="161.46926536731635"/>
+        </scene>
+        <!--Web Page Character View Controller-->
+        <scene sceneID="gec-iE-gt6">
+            <objects>
+                <viewController id="AIz-lg-1np" customClass="WebPageCharacterViewController" customModule="ilegra_marvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8uA-UT-Zug">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5P-eR-Vu6">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qle-4F-PuL">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" name="BASE_COLOR"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" name="BG_COLOR"/>
+                        <constraints>
+                            <constraint firstItem="d5P-eR-Vu6" firstAttribute="trailing" secondItem="y55-Hz-hbj" secondAttribute="trailing" id="1jk-IZ-NfY"/>
+                            <constraint firstItem="d5P-eR-Vu6" firstAttribute="leading" secondItem="y55-Hz-hbj" secondAttribute="leading" id="B5P-V3-EN3"/>
+                            <constraint firstItem="qle-4F-PuL" firstAttribute="centerX" secondItem="8uA-UT-Zug" secondAttribute="centerX" id="KdB-5n-cN9"/>
+                            <constraint firstItem="d5P-eR-Vu6" firstAttribute="top" secondItem="y55-Hz-hbj" secondAttribute="top" id="cEY-Vd-wgZ"/>
+                            <constraint firstItem="d5P-eR-Vu6" firstAttribute="bottom" secondItem="y55-Hz-hbj" secondAttribute="bottom" id="pp7-re-fPm"/>
+                            <constraint firstItem="qle-4F-PuL" firstAttribute="centerY" secondItem="8uA-UT-Zug" secondAttribute="centerY" id="zkr-EF-nvg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y55-Hz-hbj"/>
+                    </view>
+                    <connections>
+                        <outlet property="loading" destination="qle-4F-PuL" id="vte-Fi-zrL"/>
+                        <outlet property="webView" destination="d5P-eR-Vu6" id="RoB-C5-dQZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="88P-Ah-Ogw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533.5999999999999" y="160.56971514242881"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PTu-i1-ztW">
+            <objects>
+                <navigationController id="AAK-xa-VcJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iLN-RV-vic">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" name="BASE_COLOR"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BoE-Bb-8bg" kind="relationship" relationship="rootViewController" id="82I-dU-uIf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llr-5r-8ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="163"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BASE_COLOR">
+            <color red="0.92900002002716064" green="0.10599999874830246" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BASE_COLOR">
+            <color red="0.92900002002716064" green="0.10599999874830246" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BG_COLOR">
+            <color red="0.25099998712539673" green="0.24699999392032623" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BORDER_IMAGE">
+            <color red="0.32899999618530273" green="0.32199999690055847" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
